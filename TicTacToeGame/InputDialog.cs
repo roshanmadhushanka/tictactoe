@@ -35,7 +35,7 @@ namespace TicTacToeGame
 
         public static Boolean isEmpty()
         {
-            if (userName == "" || ipAddress == "")
+            if (userName == null || ipAddress == null)
             {
                 return true;
             }
@@ -43,6 +43,11 @@ namespace TicTacToeGame
             {
                 return false;
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

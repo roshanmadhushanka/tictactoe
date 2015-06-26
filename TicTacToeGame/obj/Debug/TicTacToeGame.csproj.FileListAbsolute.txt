@@ -20,3 +20,14 @@ C:\Users\ROSHAN\Documents\Visual Studio 2013\Projects\TicTacToeGame\TicTacToeGam
 C:\Users\ROSHAN\Documents\Visual Studio 2013\Projects\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.TicTacToe.resources
 C:\Users\ROSHAN\Documents\Visual Studio 2013\Projects\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.csproj.GenerateResource.Cache
 C:\Users\ROSHAN\Documents\Visual Studio 2013\Projects\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.InputDialog.resources
+D:\BACKUP\TicTacToeGame\TicTacToeGame\bin\Debug\TicTacToeGame.exe.config
+D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.exe
+D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.pdb
+D:\BACKUP\TicTacToeGame\TicTacToeGame\bin\Debug\TicTacToeGame.exe
+D:\BACKUP\TicTacToeGame\TicTacToeGame\bin\Debug\TicTacToeGame.pdb
+D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.csprojResolveAssemblyReference.cache
+D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.InputDialog.resources
+D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.PlayerForm.resources
+D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.Properties.Resources.resources
+D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.TicTacToe.resources
+D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.csproj.GenerateResource.Cache

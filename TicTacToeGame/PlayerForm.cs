@@ -615,16 +615,17 @@ namespace TicTacToeGame
         {
             if (client == null)
             {
-                newGame(GameMode.MULTI_PLAYER);
-                game.game_mode = GameMode.MULTI_PLAYER;
-                updateGameDescription();
+                
 
-                playerA = true;
-                game.moveAllowed = true;
+                //playerA = true;
+                //game.moveAllowed = true;
                 //moveAllowed = true;
                 InputDialog.show();
                 if (!InputDialog.isEmpty())
                 {
+                    newGame(GameMode.MULTI_PLAYER);
+                    game.game_mode = GameMode.MULTI_PLAYER;
+                    updateGameDescription();
                     server = new Server(InputDialog.ipAddress, "90");
                     server.OnClientConnected += new OnConnectedDelegate(server_OnClientConnected);
                     server.OnClientDisconnected += new OnDisconnectedDelegate(server_OnClientDisconnected);
@@ -642,16 +643,17 @@ namespace TicTacToeGame
         {
             if (server == null)
             {
-                newGame(GameMode.MULTI_PLAYER);
-                game.game_mode = GameMode.MULTI_PLAYER;
-                updateGameDescription();
+                
 
-                playerA = false;
-                game.moveAllowed = false;
+                //playerA = false;
+                //game.moveAllowed = false;
 
                 InputDialog.show();
                 if (!InputDialog.isEmpty())
                 {
+                    newGame(GameMode.MULTI_PLAYER);
+                    game.game_mode = GameMode.MULTI_PLAYER;
+                    updateGameDescription();
                     client = new Client();
                     client.ClientName = InputDialog.userName;
                     client.ServerIp = InputDialog.ipAddress;
