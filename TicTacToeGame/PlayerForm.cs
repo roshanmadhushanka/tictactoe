@@ -615,11 +615,6 @@ namespace TicTacToeGame
         {
             if (client == null)
             {
-                
-
-                //playerA = true;
-                //game.moveAllowed = true;
-                //moveAllowed = true;
                 InputDialog.show();
                 if (!InputDialog.isEmpty())
                 {

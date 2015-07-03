@@ -59,6 +59,7 @@
     <Compile Include="InputDialog.Designer.cs">
       <DependentUpon>InputDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Network.cs" />
     <Compile Include="PlayerForm.cs">
       <SubType>Form</SubType>
     </Compile>

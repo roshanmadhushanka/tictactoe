@@ -10,21 +10,29 @@ namespace TicTacToeGame
 {
     class Network
     {
-        Server server;
-        Client client;
+       
+        
         private Network()
         {
 
         }
 
-        public void startServer()
+        public Server startServer(String ipAddress)
         {
-
+            Server server = null;
+            server = new Server(ipAddress, "90");
+            server.Start();
+            return server;
         }
 
-        public void connectToServer()
+        public Client connectToServer(String ipAddress)
         {
-
+            Client client = null;
+            client = new Client();
+            client.ServerIp = ipAddress;
+            client.ServerPort = "90";
+            client.Connect();
+            return client;
         }
     }
 }
