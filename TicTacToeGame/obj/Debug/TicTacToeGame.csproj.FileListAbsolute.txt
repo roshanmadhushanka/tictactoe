@@ -31,3 +31,5 @@ D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.PlayerForm.resourc
 D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.Properties.Resources.resources
 D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.TicTacToe.resources
 D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.csproj.GenerateResource.Cache
+D:\BACKUP\TicTacToeGame\TicTacToeGame\bin\Debug\MySql.Data.dll
+D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.Start.resources

@@ -35,6 +35,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\T U T O R I A L S\C#\MY SQL CONNECT\ConnectCsharpToMysql_Demo\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="NetworksApi">
       <HintPath>E:\S O F T W A R E\C# NETWORK API\NetworksApi.dll</HintPath>
     </Reference>
@@ -51,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI.cs" />
+    <Compile Include="DatabaseHandler.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="InputBox.cs" />
     <Compile Include="InputDialog.cs">
@@ -65,6 +70,12 @@
     </Compile>
     <Compile Include="PlayerForm.Designer.cs">
       <DependentUpon>PlayerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Start.Designer.cs">
+      <DependentUpon>Start.cs</DependentUpon>
     </Compile>
     <Compile Include="TicTacToe.cs">
       <SubType>Form</SubType>
@@ -92,6 +103,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Start.resx">
+      <DependentUpon>Start.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TicTacToe.resx">
       <DependentUpon>TicTacToe.cs</DependentUpon>
     </EmbeddedResource>

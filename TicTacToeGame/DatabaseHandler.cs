@@ -53,6 +53,35 @@ namespace TicTacToeGame
             }
         }
 
+        public List<string>[] SelectAllPlayers()
+        {
+            string query = "SELECT * FROM player";
+
+            //Create a list to store the result
+            List<string>[] list = new List<string>[2];
+            list[0] = new List<string>();
+            list[1] = new List<string>();
+
+            if (this.openConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    list[0].Add(dataReader["id"] + "");
+                    list[1].Add(dataReader["name"] + "");
+                }
+
+                dataReader.Close();
+                this.closeConnection();
+                return list;
+            }
+            else
+            {
+                return list;
+            }
+        }
 
     }
 }

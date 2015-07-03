@@ -9,6 +9,7 @@ namespace TicTacToeGame
     [Serializable]
     public class Player
     {
+        public int id { set; get; }
         public string name { set; get; }
         public int score { set; get; }
         public PlayerType playerType {set; get;}

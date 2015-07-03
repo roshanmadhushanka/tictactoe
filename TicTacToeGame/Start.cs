@@ -12,9 +12,39 @@ namespace TicTacToeGame
 {
     public partial class Start : Form
     {
+        private List<string>[] playerList;
         public Start()
         {
             InitializeComponent();
+        }
+
+        private void btnLoadGame_Click(object sender, EventArgs e)
+        {
+            if(cmbProfile.Items.Count != 0)
+            {
+                Player tmp = new Player();
+                tmp.id = Int32.Parse(playerList[0][cmbProfile.SelectedIndex]);
+                tmp.name = playerList[1][cmbProfile.SelectedIndex];
+
+                this.Hide();
+                new PlayerForm().Show();
+            }
+            else
+            {
+                MessageBox.Show("Existing Players cannot found");
+            }
+            
+        }
+
+        private void Start_Load(object sender, EventArgs e)
+        {
+            DatabaseHandler handler = new DatabaseHandler();
+            playerList = handler.SelectAllPlayers();
+
+            for (int i = 0; i < playerList[0].Count; i++)
+            {
+                cmbProfile.Items.Add(playerList[1][i]);
+            }
         }
     }
 }
