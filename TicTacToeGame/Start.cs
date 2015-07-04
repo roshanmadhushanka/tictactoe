@@ -20,7 +20,7 @@ namespace TicTacToeGame
 
         private void btnLoadGame_Click(object sender, EventArgs e)
         {
-            if(cmbProfile.Items.Count != 0)
+            if(cmbProfile.Items.Count != 0 && cmbProfile.SelectedItem != null)
             {
                 Player tmp = new Player();
                 tmp.id = Int32.Parse(playerList[0][cmbProfile.SelectedIndex]);
@@ -28,12 +28,7 @@ namespace TicTacToeGame
 
                 this.Hide();
                 new PlayerForm().Show();
-            }
-            else
-            {
-                MessageBox.Show("Existing Players cannot found");
-            }
-            
+            } 
         }
 
         private void Start_Load(object sender, EventArgs e)
