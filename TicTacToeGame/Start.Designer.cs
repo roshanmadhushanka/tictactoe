@@ -32,12 +32,20 @@
             this.btnLoadGame = new System.Windows.Forms.Button();
             this.cmbProfile = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNewPlayer = new System.Windows.Forms.TextBox();
+            this.btnNewGame = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Controls.Add(this.btnNewGame);
+            this.panel1.Controls.Add(this.txtNewPlayer);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnLoadGame);
             this.panel1.Controls.Add(this.cmbProfile);
             this.panel1.Controls.Add(this.label1);
@@ -49,7 +57,7 @@
             // btnLoadGame
             // 
             this.btnLoadGame.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadGame.Location = new System.Drawing.Point(24, 63);
+            this.btnLoadGame.Location = new System.Drawing.Point(24, 176);
             this.btnLoadGame.Name = "btnLoadGame";
             this.btnLoadGame.Size = new System.Drawing.Size(195, 33);
             this.btnLoadGame.TabIndex = 2;
@@ -61,7 +69,7 @@
             // 
             this.cmbProfile.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProfile.FormattingEnabled = true;
-            this.cmbProfile.Location = new System.Drawing.Point(98, 18);
+            this.cmbProfile.Location = new System.Drawing.Point(98, 131);
             this.cmbProfile.Name = "cmbProfile";
             this.cmbProfile.Size = new System.Drawing.Size(121, 31);
             this.cmbProfile.TabIndex = 1;
@@ -71,11 +79,52 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(20, 21);
+            this.label1.Location = new System.Drawing.Point(20, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Profile";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label2.Location = new System.Drawing.Point(251, 134);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 23);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "New Player";
+            // 
+            // txtNewPlayer
+            // 
+            this.txtNewPlayer.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPlayer.Location = new System.Drawing.Point(354, 131);
+            this.txtNewPlayer.Name = "txtNewPlayer";
+            this.txtNewPlayer.Size = new System.Drawing.Size(134, 31);
+            this.txtNewPlayer.TabIndex = 4;
+            // 
+            // btnNewGame
+            // 
+            this.btnNewGame.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewGame.Location = new System.Drawing.Point(255, 176);
+            this.btnNewGame.Name = "btnNewGame";
+            this.btnNewGame.Size = new System.Drawing.Size(233, 33);
+            this.btnNewGame.TabIndex = 5;
+            this.btnNewGame.Text = "New Game";
+            this.btnNewGame.UseVisualStyleBackColor = true;
+            this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(24, 215);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(464, 33);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Start
             // 
@@ -100,5 +149,9 @@
         private System.Windows.Forms.Button btnLoadGame;
         private System.Windows.Forms.ComboBox cmbProfile;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnNewGame;
+        private System.Windows.Forms.TextBox txtNewPlayer;
+        private System.Windows.Forms.Label label2;
     }
 }

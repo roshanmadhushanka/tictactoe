@@ -370,24 +370,28 @@ namespace TicTacToeGame
                 updateGameDescription();
                 resetBoard();
                 update();
-                if (playerA == false && client != null)
+                if (game.playerA.moveAllowed == false && client != null)
                 {
-                    playerA = true;
+                    game.playerA.moveAllowed = true;
+                    game.playerB.moveAllowed = false;
                     game.moveAllowed = true;
                 }
-                else if (playerA == false && server != null)
+                else if (game.playerA.moveAllowed == false && server != null)
                 {
-                    playerA = true;
+                    game.playerA.moveAllowed = true;
+                    game.playerB.moveAllowed = false;
                     game.moveAllowed = false;
                 }
-                else if (playerA == true && server != null)
+                else if (game.playerA.moveAllowed == true && server != null)
                 {
-                    playerA = false;
+                    game.playerA.moveAllowed = false;
+                    game.playerB.moveAllowed = true;
                     game.moveAllowed = false;
                 }
-                else if (playerA == true && server != null)
+                else if (game.playerA.moveAllowed == true && server != null)
                 {
-                    playerA = true;
+                    game.playerA.moveAllowed = false;
+                    game.playerB.moveAllowed = true;
                     game.moveAllowed = true;
                 }
             }
@@ -615,39 +619,37 @@ namespace TicTacToeGame
         {
             if (client == null)
             {
-                InputDialog.show();
-                if (!InputDialog.isEmpty())
-                {
-                    newGame(GameMode.MULTI_PLAYER);
-                    game.game_mode = GameMode.MULTI_PLAYER;
-                    updateGameDescription();
-                    server = new Server(InputDialog.ipAddress, "90");
-                    server.OnClientConnected += new OnConnectedDelegate(server_OnClientConnected);
-                    server.OnClientDisconnected += new OnDisconnectedDelegate(server_OnClientDisconnected);
-                    server.OnDataReceived += new OnReceivedDelegate(server_OnDataReceived);
-                    server.OnServerError += new OnErrorDelegate(server_OnServerError);
-                    server.Start();
-                    updateList("Server Name : " + InputDialog.userName);
-                    updateList("Server Start : " + InputDialog.ipAddress);
+                    InputDialog.show();
+                    if (!InputDialog.isEmpty())
+                    {
+                        newGame(GameMode.MULTI_PLAYER);
+                        game.game_mode = GameMode.MULTI_PLAYER;
+                        game.moveAllowed = true;
+                        game.playerA.moveAllowed = true;
+                        updateGameDescription();
+                        server = new Server(InputDialog.ipAddress, "90");
+                        server.OnClientConnected += new OnConnectedDelegate(server_OnClientConnected);
+                        server.OnClientDisconnected += new OnDisconnectedDelegate(server_OnClientDisconnected);
+                        server.OnDataReceived += new OnReceivedDelegate(server_OnDataReceived);
+                        server.OnServerError += new OnErrorDelegate(server_OnServerError);
+                        server.Start();
+                        updateList("Server Name : " + InputDialog.userName);
+                        updateList("Server Start : " + InputDialog.ipAddress);
+                    }
                 }
-
-            }
         }
 
         private void connectToServerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (server == null)
             {
-                
-
-                //playerA = false;
-                //game.moveAllowed = false;
-
                 InputDialog.show();
                 if (!InputDialog.isEmpty())
                 {
                     newGame(GameMode.MULTI_PLAYER);
                     game.game_mode = GameMode.MULTI_PLAYER;
+                    game.moveAllowed = false;
+                    game.playerB.moveAllowed = false;
                     updateGameDescription();
                     client = new Client();
                     client.ClientName = InputDialog.userName;

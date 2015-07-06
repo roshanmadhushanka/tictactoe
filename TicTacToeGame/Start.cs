@@ -13,6 +13,7 @@ namespace TicTacToeGame
     public partial class Start : Form
     {
         private List<string>[] playerList;
+        private Player tmp;
         public Start()
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace TicTacToeGame
         {
             if(cmbProfile.Items.Count != 0 && cmbProfile.SelectedItem != null)
             {
-                Player tmp = new Player();
+                tmp = new Player();
                 tmp.id = Int32.Parse(playerList[0][cmbProfile.SelectedIndex]);
                 tmp.name = playerList[1][cmbProfile.SelectedIndex];
 
@@ -40,6 +41,33 @@ namespace TicTacToeGame
             {
                 cmbProfile.Items.Add(playerList[1][i]);
             }
+        }
+
+        public Player getLoadPlayer()
+        {
+            return tmp;
+        }
+
+        private void btnNewGame_Click(object sender, EventArgs e)
+        {
+            if (txtNewPlayer.Text == "")
+            {
+                MessageBox.Show("Please enter player name!");
+            }
+            else
+            {
+                tmp = new Player();
+                tmp.name = txtNewPlayer.Text;
+                DatabaseHandler handler = new DatabaseHandler();
+                handler.save(tmp);
+                txtNewPlayer.Text = "";
+
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

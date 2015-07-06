@@ -83,5 +83,26 @@ namespace TicTacToeGame
             }
         }
 
+        public bool save(Object obj)
+        {
+            if (obj.GetType() == typeof(Player))
+            {
+                Player tmp = (Player)obj;
+                string query = "INSERT INTO `player`(`id`, `name`, `highest_score`) VALUES (null,'"+ tmp.name +"',0)";
+
+                if (this.openConnection() == true)
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+                    this.closeConnection();
+                    return true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Cannot connect with the server");
+            }
+            return false;
+        }
     }
 }
