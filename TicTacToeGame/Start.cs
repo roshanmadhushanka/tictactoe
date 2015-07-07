@@ -12,8 +12,8 @@ namespace TicTacToeGame
 {
     public partial class Start : Form
     {
-        private List<string>[] playerList;
-        private Player tmp;
+        private List<Player> playerList;
+        private static Player tmp;
         public Start()
         {
             InitializeComponent();
@@ -24,9 +24,7 @@ namespace TicTacToeGame
             if(cmbProfile.Items.Count != 0 && cmbProfile.SelectedItem != null)
             {
                 tmp = new Player();
-                tmp.id = Int32.Parse(playerList[0][cmbProfile.SelectedIndex]);
-                tmp.name = playerList[1][cmbProfile.SelectedIndex];
-
+                tmp = playerList[cmbProfile.SelectedIndex];
                 this.Hide();
                 new PlayerForm().Show();
             } 
@@ -35,16 +33,19 @@ namespace TicTacToeGame
         private void Start_Load(object sender, EventArgs e)
         {
             DatabaseHandler handler = new DatabaseHandler();
-            playerList = handler.SelectAllPlayers();
+            playerList = handler.selectAllPlayers();
 
-            for (int i = 0; i < playerList[0].Count; i++)
+            for (int i = 0; i < playerList.Count; i++)
             {
-                cmbProfile.Items.Add(playerList[1][i]);
+                cmbProfile.Items.Add(playerList[i].name);
+                
             }
         }
 
-        public Player getLoadPlayer()
+        public static Player getLoadPlayer()
         {
+            tmp.playerType = PlayerType.BALL;
+            tmp.moveAllowed = true;
             return tmp;
         }
 

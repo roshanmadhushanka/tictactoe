@@ -53,34 +53,23 @@ namespace TicTacToeGame
             }
         }
 
-        public List<string>[] SelectAllPlayers()
+        public List<Player> selectAllPlayers()
         {
             string query = "SELECT * FROM player";
-
-            //Create a list to store the result
-            List<string>[] list = new List<string>[2];
-            list[0] = new List<string>();
-            list[1] = new List<string>();
-
-            if (this.openConnection() == true)
-            {
+            List<Player> list = new List<Player>();
+            if(this.openConnection() == true){
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
-
-                while (dataReader.Read())
-                {
-                    list[0].Add(dataReader["id"] + "");
-                    list[1].Add(dataReader["name"] + "");
+                while(dataReader.Read()){
+                    Player tmp = new Player();
+                    tmp.id = Int32.Parse(dataReader["id"].ToString());
+                    tmp.name = dataReader["name"].ToString();
+                    list.Add(tmp);
                 }
-
                 dataReader.Close();
                 this.closeConnection();
-                return list;
             }
-            else
-            {
-                return list;
-            }
+            return list;
         }
 
         public bool save(Object obj)
@@ -102,6 +91,13 @@ namespace TicTacToeGame
             {
                 MessageBox.Show("Cannot connect with the server");
             }
+            return false;
+        }
+
+        public bool update(Object obj)
+        {
+            Player tmp = (Player)obj;
+            string query = "INSERT QUERY";
             return false;
         }
     }

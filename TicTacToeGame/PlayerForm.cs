@@ -20,7 +20,7 @@ namespace TicTacToeGame
 {
     public delegate void changeGame(String command);
     public delegate void changeList(String str);
-
+    public delegate void clearList();
     public partial class PlayerForm : Form
     {
         Game game;
@@ -88,8 +88,8 @@ namespace TicTacToeGame
             lblGameMode.Text = game.game_mode.ToString();
             lblCrossScore.Text = game.playerA.score.ToString();
             lblBallScore.Text = game.playerB.score.ToString();
-            //lblPlayerA.Text = game.playerA.name;
-            //lblPlayerB.Text = game.playerB.name;
+            lblPlayerA.Text = game.playerA.name;
+            lblPlayerB.Text = game.playerB.name;
         }
         
         public void resetBoard()
@@ -132,11 +132,12 @@ namespace TicTacToeGame
         {
             InitializeComponent();
             newGame(GameMode.SINGLE_PLAYER);
+            Game.current_game.playerA = Start.getLoadPlayer();
+            updateGameDescription();
         }
 
         private void PlayerForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void update()
@@ -673,6 +674,7 @@ namespace TicTacToeGame
             newGame(GameMode.MULTI_PLAYER_STANDALONE);
             game.game_mode = GameMode.MULTI_PLAYER_STANDALONE;
             updateGameDescription();
+            lblDifficulty.Text = "";
         }
 
     }

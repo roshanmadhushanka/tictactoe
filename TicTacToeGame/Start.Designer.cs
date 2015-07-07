@@ -29,19 +29,21 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnNewGame = new System.Windows.Forms.Button();
+            this.txtNewPlayer = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnLoadGame = new System.Windows.Forms.Button();
             this.cmbProfile = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtNewPlayer = new System.Windows.Forms.TextBox();
-            this.btnNewGame = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnNewGame);
             this.panel1.Controls.Add(this.txtNewPlayer);
@@ -53,6 +55,47 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(503, 261);
             this.panel1.TabIndex = 0;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(24, 215);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(464, 33);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnNewGame
+            // 
+            this.btnNewGame.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewGame.Location = new System.Drawing.Point(255, 176);
+            this.btnNewGame.Name = "btnNewGame";
+            this.btnNewGame.Size = new System.Drawing.Size(233, 33);
+            this.btnNewGame.TabIndex = 5;
+            this.btnNewGame.Text = "New Game";
+            this.btnNewGame.UseVisualStyleBackColor = true;
+            this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
+            // 
+            // txtNewPlayer
+            // 
+            this.txtNewPlayer.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNewPlayer.Location = new System.Drawing.Point(354, 131);
+            this.txtNewPlayer.Name = "txtNewPlayer";
+            this.txtNewPlayer.Size = new System.Drawing.Size(134, 31);
+            this.txtNewPlayer.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label2.Location = new System.Drawing.Point(251, 134);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 23);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "New Player";
             // 
             // btnLoadGame
             // 
@@ -85,46 +128,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Profile";
             // 
-            // label2
+            // label3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label2.Location = new System.Drawing.Point(251, 134);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 23);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "New Player";
-            // 
-            // txtNewPlayer
-            // 
-            this.txtNewPlayer.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNewPlayer.Location = new System.Drawing.Point(354, 131);
-            this.txtNewPlayer.Name = "txtNewPlayer";
-            this.txtNewPlayer.Size = new System.Drawing.Size(134, 31);
-            this.txtNewPlayer.TabIndex = 4;
-            // 
-            // btnNewGame
-            // 
-            this.btnNewGame.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewGame.Location = new System.Drawing.Point(255, 176);
-            this.btnNewGame.Name = "btnNewGame";
-            this.btnNewGame.Size = new System.Drawing.Size(233, 33);
-            this.btnNewGame.TabIndex = 5;
-            this.btnNewGame.Text = "New Game";
-            this.btnNewGame.UseVisualStyleBackColor = true;
-            this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(24, 215);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(464, 33);
-            this.btnExit.TabIndex = 6;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(17, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(169, 42);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Tic Tac Toe";
             // 
             // Start
             // 
@@ -153,5 +166,6 @@
         private System.Windows.Forms.Button btnNewGame;
         private System.Windows.Forms.TextBox txtNewPlayer;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

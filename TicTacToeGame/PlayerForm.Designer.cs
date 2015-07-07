@@ -65,6 +65,9 @@
             this.lblGameMode = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lstMessage = new System.Windows.Forms.ListBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic21)).BeginInit();
@@ -228,7 +231,7 @@
             this.gameModeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(627, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(539, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -286,27 +289,27 @@
             this.normalToolStripMenuItem1,
             this.hardToolStripMenuItem1});
             this.singlePlayerToolStripMenuItem.Name = "singlePlayerToolStripMenuItem";
-            this.singlePlayerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.singlePlayerToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.singlePlayerToolStripMenuItem.Text = "Single Player";
             // 
             // easyToolStripMenuItem1
             // 
             this.easyToolStripMenuItem1.Name = "easyToolStripMenuItem1";
-            this.easyToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.easyToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
             this.easyToolStripMenuItem1.Text = "Easy";
             this.easyToolStripMenuItem1.Click += new System.EventHandler(this.easyToolStripMenuItem1_Click);
             // 
             // normalToolStripMenuItem1
             // 
             this.normalToolStripMenuItem1.Name = "normalToolStripMenuItem1";
-            this.normalToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.normalToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
             this.normalToolStripMenuItem1.Text = "Normal";
             this.normalToolStripMenuItem1.Click += new System.EventHandler(this.normalToolStripMenuItem1_Click);
             // 
             // hardToolStripMenuItem1
             // 
             this.hardToolStripMenuItem1.Name = "hardToolStripMenuItem1";
-            this.hardToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.hardToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
             this.hardToolStripMenuItem1.Text = "Hard";
             this.hardToolStripMenuItem1.Click += new System.EventHandler(this.hardToolStripMenuItem1_Click);
             // 
@@ -317,7 +320,7 @@
             this.crateServerToolStripMenuItem,
             this.connectToServerToolStripMenuItem});
             this.multiPlayerToolStripMenuItem.Name = "multiPlayerToolStripMenuItem";
-            this.multiPlayerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.multiPlayerToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.multiPlayerToolStripMenuItem.Text = "Multi Player";
             // 
             // singlePCToolStripMenuItem
@@ -346,7 +349,7 @@
             this.lblDifficulty.AutoSize = true;
             this.lblDifficulty.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDifficulty.ForeColor = System.Drawing.Color.MintCream;
-            this.lblDifficulty.Location = new System.Drawing.Point(260, 39);
+            this.lblDifficulty.Location = new System.Drawing.Point(399, 29);
             this.lblDifficulty.Name = "lblDifficulty";
             this.lblDifficulty.Size = new System.Drawing.Size(128, 29);
             this.lblDifficulty.TabIndex = 2;
@@ -357,7 +360,7 @@
             this.lblPlayerA.AutoSize = true;
             this.lblPlayerA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerA.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblPlayerA.Location = new System.Drawing.Point(260, 99);
+            this.lblPlayerA.Location = new System.Drawing.Point(260, 94);
             this.lblPlayerA.Name = "lblPlayerA";
             this.lblPlayerA.Size = new System.Drawing.Size(84, 16);
             this.lblPlayerA.TabIndex = 3;
@@ -368,7 +371,7 @@
             this.lblPlayerB.AutoSize = true;
             this.lblPlayerB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerB.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblPlayerB.Location = new System.Drawing.Point(260, 175);
+            this.lblPlayerB.Location = new System.Drawing.Point(374, 94);
             this.lblPlayerB.Name = "lblPlayerB";
             this.lblPlayerB.Size = new System.Drawing.Size(97, 16);
             this.lblPlayerB.TabIndex = 4;
@@ -379,7 +382,7 @@
             this.lblBallScore.AutoSize = true;
             this.lblBallScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBallScore.ForeColor = System.Drawing.Color.Red;
-            this.lblBallScore.Location = new System.Drawing.Point(260, 118);
+            this.lblBallScore.Location = new System.Drawing.Point(258, 108);
             this.lblBallScore.Name = "lblBallScore";
             this.lblBallScore.Size = new System.Drawing.Size(40, 42);
             this.lblBallScore.TabIndex = 5;
@@ -390,7 +393,7 @@
             this.lblCrossScore.AutoSize = true;
             this.lblCrossScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCrossScore.ForeColor = System.Drawing.Color.Red;
-            this.lblCrossScore.Location = new System.Drawing.Point(260, 197);
+            this.lblCrossScore.Location = new System.Drawing.Point(370, 110);
             this.lblCrossScore.Name = "lblCrossScore";
             this.lblCrossScore.Size = new System.Drawing.Size(40, 42);
             this.lblCrossScore.TabIndex = 6;
@@ -401,7 +404,7 @@
             this.lblGameMode.AutoSize = true;
             this.lblGameMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGameMode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblGameMode.Location = new System.Drawing.Point(262, 68);
+            this.lblGameMode.Location = new System.Drawing.Point(262, 39);
             this.lblGameMode.Name = "lblGameMode";
             this.lblGameMode.Size = new System.Drawing.Size(94, 16);
             this.lblGameMode.TabIndex = 7;
@@ -409,26 +412,56 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Teal;
             this.panel2.Controls.Add(this.lstMessage);
-            this.panel2.Location = new System.Drawing.Point(415, 39);
+            this.panel2.Location = new System.Drawing.Point(263, 155);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 245);
+            this.panel2.Size = new System.Drawing.Size(222, 125);
             this.panel2.TabIndex = 8;
             // 
             // lstMessage
             // 
             this.lstMessage.FormattingEnabled = true;
-            this.lstMessage.Location = new System.Drawing.Point(3, 3);
+            this.lstMessage.Location = new System.Drawing.Point(13, 10);
             this.lstMessage.Name = "lstMessage";
-            this.lstMessage.Size = new System.Drawing.Size(194, 238);
+            this.lstMessage.Size = new System.Drawing.Size(195, 108);
             this.lstMessage.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(263, 67);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(108, 21);
+            this.comboBox1.TabIndex = 9;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(377, 67);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(108, 21);
+            this.comboBox2.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(13, 297);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // PlayerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(627, 289);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(539, 332);
+            this.ControlBox = false;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblGameMode);
             this.Controls.Add(this.lblCrossScore);
@@ -505,5 +538,8 @@
         private System.Windows.Forms.ToolStripMenuItem singlePCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crateServerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem connectToServerToolStripMenuItem;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button button1;
     }
 }
