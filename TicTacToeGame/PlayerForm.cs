@@ -677,5 +677,11 @@ namespace TicTacToeGame
             lblDifficulty.Text = "";
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Start.form.Show();
+        }
+
     }
 }

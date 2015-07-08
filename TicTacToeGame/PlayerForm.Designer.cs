@@ -67,7 +67,7 @@
             this.lstMessage = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic21)).BeginInit();
@@ -416,7 +416,7 @@
             this.panel2.Controls.Add(this.lstMessage);
             this.panel2.Location = new System.Drawing.Point(263, 155);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(222, 125);
+            this.panel2.Size = new System.Drawing.Size(264, 125);
             this.panel2.TabIndex = 8;
             // 
             // lstMessage
@@ -424,7 +424,7 @@
             this.lstMessage.FormattingEnabled = true;
             this.lstMessage.Location = new System.Drawing.Point(13, 10);
             this.lstMessage.Name = "lstMessage";
-            this.lstMessage.Size = new System.Drawing.Size(195, 108);
+            this.lstMessage.Size = new System.Drawing.Size(238, 108);
             this.lstMessage.TabIndex = 0;
             // 
             // comboBox1
@@ -443,23 +443,25 @@
             this.comboBox2.Size = new System.Drawing.Size(108, 21);
             this.comboBox2.TabIndex = 10;
             // 
-            // button1
+            // btnBack
             // 
-            this.button1.Location = new System.Drawing.Point(13, 297);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBack.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(386, 286);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(141, 33);
+            this.btnBack.TabIndex = 11;
+            this.btnBack.Text = "Main Menu";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // PlayerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(539, 332);
+            this.ClientSize = new System.Drawing.Size(539, 342);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.panel2);
@@ -540,6 +542,6 @@
         private System.Windows.Forms.ToolStripMenuItem connectToServerToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBack;
     }
 }

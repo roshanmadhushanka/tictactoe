@@ -7,6 +7,12 @@ using TicTacToeGame.DAO;
 
 namespace TicTacToeGame.Controller
 {
+    public enum SELECT
+    {
+        SINGLE_PLAYER = 0,
+        MULTI_PLAYER = 1,
+        MULTI_PLAYER_STANDALONE = 2
+    }
     class PlayerController
     {
         public void save(string name)
@@ -21,5 +27,6 @@ namespace TicTacToeGame.Controller
         {
             return new PlayerDAO().count();
         }
+
     }
 }

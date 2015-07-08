@@ -42,5 +42,27 @@ namespace TicTacToeGame.DAO
             }
             return -1;
         }
+
+        public List<Player> selectAll()
+        {
+            string query = "SELECT * FROM player";
+            List<Player> list = new List<Player>();
+            DBConnector dbCon = new DBConnector();
+            if (dbCon.openConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, dbCon.connection);
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    Player tmp = new Player();
+                    tmp.id = Int32.Parse(dataReader["id"].ToString());
+                    tmp.name = dataReader["name"].ToString();
+                    list.Add(tmp);
+                }
+                dataReader.Close();
+                dbCon.closeConnection();
+            }
+            return list;
+        }
     }
 }

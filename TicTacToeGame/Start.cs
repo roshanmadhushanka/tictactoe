@@ -14,11 +14,13 @@ namespace TicTacToeGame
 {
     public partial class Start : Form
     {
+        public static Start form { set; get; }
         private List<Player> playerList;
         private static Player tmp;
         public Start()
         {
             InitializeComponent();
+            Start.form = this;
         }
 
         private void btnLoadGame_Click(object sender, EventArgs e)
@@ -34,8 +36,8 @@ namespace TicTacToeGame
 
         private void Start_Load(object sender, EventArgs e)
         {
-            DatabaseHandler handler = new DatabaseHandler();
-            playerList = handler.selectAllPlayers();
+            PlayerDAO playerDAO = new PlayerDAO();
+            playerList = playerDAO.selectAll();
 
             for (int i = 0; i < playerList.Count; i++)
             {
