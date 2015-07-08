@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TicTacToeGame.Controller;
+using TicTacToeGame.DAO;
 
 namespace TicTacToeGame
 {
@@ -38,7 +40,6 @@ namespace TicTacToeGame
             for (int i = 0; i < playerList.Count; i++)
             {
                 cmbProfile.Items.Add(playerList[i].name);
-                
             }
         }
 
@@ -59,9 +60,12 @@ namespace TicTacToeGame
             {
                 tmp = new Player();
                 tmp.name = txtNewPlayer.Text;
-                DatabaseHandler handler = new DatabaseHandler();
-                handler.save(tmp);
+                tmp.id = new PlayerController().count()+1;
+                PlayerDAO playerDAO = new PlayerDAO();
+                playerDAO.save(tmp);
                 txtNewPlayer.Text = "";
+                this.Hide();
+                new PlayerForm().Show();
 
             }
         }

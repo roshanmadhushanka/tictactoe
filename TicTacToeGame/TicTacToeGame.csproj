@@ -55,6 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI.cs" />
+    <Compile Include="Connection\DBConnector.cs" />
+    <Compile Include="Controller\PlayerController.cs" />
+    <Compile Include="DAO\PlayerDAO.cs" />
     <Compile Include="DatabaseHandler.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="InputBox.cs" />
@@ -71,6 +74,7 @@
     <Compile Include="PlayerForm.Designer.cs">
       <DependentUpon>PlayerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Score.cs" />
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,7 +88,7 @@
       <DependentUpon>TicTacToe.cs</DependentUpon>
     </Compile>
     <Compile Include="GameOptions.cs" />
-    <Compile Include="Player.cs" />
+    <Compile Include="Model\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="InputDialog.resx">

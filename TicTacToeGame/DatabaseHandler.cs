@@ -96,8 +96,11 @@ namespace TicTacToeGame
 
         public bool update(Object obj)
         {
-            Player tmp = (Player)obj;
-            string query = "INSERT QUERY";
+            if (obj.GetType() == typeof(Player))
+            {
+                Player tmp = (Player)obj;
+                string query = "";
+            }
             return false;
         }
     }
