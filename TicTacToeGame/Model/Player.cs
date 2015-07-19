@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TicTacToeGame.DAO;
+using TicTacToeGame.DTO;
 
 namespace TicTacToeGame
 {
@@ -46,7 +48,16 @@ namespace TicTacToeGame
                 return true;
             }
             return false;
-        }  
+        }
+
+        public void saveScore()
+        {
+            if (Game.current_game.game_mode == GameMode.SINGLE_PLAYER)
+            {
+                ScoreDAO scoreDAO = new ScoreDAO();
+                scoreDAO.create(new ScoreDTO(this.id, this.score, Game.current_game.difficulty, Game.current_game.game_mode));
+            }
+        }
     }
 
 }

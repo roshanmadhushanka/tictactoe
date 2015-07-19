@@ -16,9 +16,10 @@ namespace TicTacToeGame
 
     public enum Difficulty
     {
-        EASY = 0,
-        NORMAL = 1,
-        HARD = 2
+        NONE = 0,
+        EASY = 1,
+        NORMAL = 2,
+        HARD = 3
     }
 
     public enum GameStat

@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Serialization;
+using TicTacToeGame.DAO;
+using TicTacToeGame.DTO;
 
 namespace TicTacToeGame
 {
@@ -17,34 +20,40 @@ namespace TicTacToeGame
         public GameMode game_mode { set; get; }
         public PlayerType[,] board{set; get;}
         public bool moveAllowed { set; get; }
-        public bool chanceOfPlayerAI { set; get; }
-        public bool chanceOfPlayerA { set; get; }
+        //public bool chanceOfPlayerAI { set; get; }
+        //public bool chanceOfPlayerA { set; get; }
         public bool connected { set; get; }
         public Game()
         {
             
         }
-        public Game(Player playerA,Player playerB,Difficulty difficulty,GameMode gameMode)
+        public Game(ref Player playerA,ref Player playerB,Difficulty difficulty,GameMode gameMode)
         {
             current_game = this;
             board = new PlayerType[3,3]{{PlayerType.NONE,PlayerType.NONE,PlayerType.NONE},
                                         {PlayerType.NONE,PlayerType.NONE,PlayerType.NONE},
                                         {PlayerType.NONE,PlayerType.NONE,PlayerType.NONE}};
             this.playerA = playerA;
+            this.playerA.score = 0;
             this.playerB = playerB;
             this.difficulty = difficulty;
             this.game_mode = gameMode;
             if (game_mode == GameMode.SINGLE_PLAYER)
             {
-                playerA.name = "User";
+                //playerA.name = "User";
                 playerB.name = "Computer";
                 playerA.moveAllowed = true;
                 playerB.moveAllowed = false;
             }else if(game_mode == GameMode.MULTI_PLAYER_STANDALONE){
-                playerA.name = "Ball";
+                //playerA.name = "Ball";
                 playerB.name = "Cross";
-                playerA.moveAllowed = true;
+                //playerA.moveAllowed = true;
                 playerB.moveAllowed = false;
+                this.difficulty = Difficulty.NONE;
+            }
+            else if (game_mode == GameMode.MULTI_PLAYER)
+            {
+                this.difficulty = Difficulty.NONE;
             }
             this.current_player = playerA;
             this.connected = false;
@@ -111,9 +120,9 @@ namespace TicTacToeGame
             {
                 if (getGameStat() == GameStat.PLAYER_BALL_WIN)
                 {
-                    Game.current_game.playerB.score++;
-                }else if(getGameStat() == GameStat.PLAYER_CROSS_WIN){
                     Game.current_game.playerA.score++;
+                }else if(getGameStat() == GameStat.PLAYER_CROSS_WIN){
+                    Game.current_game.playerB.score++;
                 }
                 return true;
             }
@@ -154,6 +163,28 @@ namespace TicTacToeGame
             }
         }
 
-
+        public void saveGameScore()
+        {
+            if (this.game_mode == GameMode.SINGLE_PLAYER)
+            {
+                if (this.playerA.score > 0)
+                {
+                    ScoreDAO scoreDAO = new ScoreDAO();
+                    scoreDAO.create(new ScoreDTO(this.playerA.id, this.playerA.score, this.difficulty, this.game_mode));
+                }
+            }
+            else if (this.game_mode == GameMode.MULTI_PLAYER_STANDALONE)
+            {
+                ScoreDAO scoreDAO = new ScoreDAO();
+                if (this.playerA.score > 0)
+                {
+                    scoreDAO.create(new ScoreDTO(this.playerA.id, this.playerA.score, this.difficulty, this.game_mode));
+                }
+                if (this.playerB.score > 0)
+                {
+                    scoreDAO.create(new ScoreDTO(this.playerB.id, this.playerB.score, this.difficulty, this.game_mode));
+                }
+            }
+        }
     }
 }

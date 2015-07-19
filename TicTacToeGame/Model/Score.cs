@@ -11,6 +11,6 @@ namespace TicTacToeGame
         public int id { set; get; }
         public int player_id { set; get; }
         public int score { set; get; }
-        public DateTime date { set; get; }
+        public int game_mode { set; get; }
     }
 }

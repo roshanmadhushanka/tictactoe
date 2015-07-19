@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using TicTacToeGame.Connection;
 using System.Windows.Forms;
+using TicTacToeGame.DTO;
 
 namespace TicTacToeGame.DAO
 {
+    //Player Data Access Object
     class PlayerDAO
     {
-        public bool save(Player player){
+        public bool create(Player player){
             DBConnector dbCon = new DBConnector();
             
             if (dbCon.openConnection() == true)
             {
-                string query = "INSERT INTO `player`(`id`, `name`) VALUES (null,'" + player.name + "')";
+                string query = "INSERT INTO `player`(`id`, `name`,`status`) VALUES (null,'" + player.name + "','1')";
                 MySqlCommand cmd = new MySqlCommand(query, dbCon.connection);
                 cmd.ExecuteNonQuery();
                 dbCon.closeConnection();
@@ -30,23 +32,23 @@ namespace TicTacToeGame.DAO
             
             if (dbCon.openConnection() == true)
             {
-                int count = 0;
                 string query = "SELECT * FROM `player`";
+                int count = 0;
                 MySqlCommand cmd = new MySqlCommand(query, dbCon.connection);
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
                     count++;
                 }
+                dbCon.closeConnection();
                 return count;
             }
             return -1;
         }
-
-        public List<Player> selectAll()
+        public List<PlayerDTO> selectAll()
         {
-            string query = "SELECT * FROM player";
-            List<Player> list = new List<Player>();
+            string query = "SELECT * FROM player WHERE status='1'";
+            List<PlayerDTO> list = new List<PlayerDTO>();
             DBConnector dbCon = new DBConnector();
             if (dbCon.openConnection() == true)
             {
@@ -54,7 +56,7 @@ namespace TicTacToeGame.DAO
                 MySqlDataReader dataReader = cmd.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    Player tmp = new Player();
+                    PlayerDTO tmp = new PlayerDTO();
                     tmp.id = Int32.Parse(dataReader["id"].ToString());
                     tmp.name = dataReader["name"].ToString();
                     list.Add(tmp);
@@ -63,6 +65,18 @@ namespace TicTacToeGame.DAO
                 dbCon.closeConnection();
             }
             return list;
+        }
+        public bool update(PlayerDTO player)
+        {
+            DBConnector dbCon = new DBConnector();
+            if(dbCon.openConnection() == true){
+                string query = "UPDATE `player` SET `name`='" + player.name + "',`status`='" + player.status + "' WHERE id='" + player.id + "'";
+                MySqlCommand cmd = new MySqlCommand(query, dbCon.connection);
+                cmd.ExecuteNonQuery();
+                dbCon.closeConnection();
+                return true;
+            }
+            return false;
         }
     }
 }
