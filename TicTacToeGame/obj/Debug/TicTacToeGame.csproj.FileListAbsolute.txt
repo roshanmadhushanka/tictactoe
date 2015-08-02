@@ -34,3 +34,6 @@ D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.csproj.GenerateRes
 D:\BACKUP\TicTacToeGame\TicTacToeGame\bin\Debug\MySql.Data.dll
 D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.Start.resources
 D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.Forms.ScoreBoard.resources
+C:\Users\Eranga\Documents\GitHub\tictactoe\TicTacToeGame\bin\Debug\TicTacToeGame.exe.config
+C:\Users\Eranga\Documents\GitHub\tictactoe\TicTacToeGame\obj\Debug\TicTacToeGame.exe
+C:\Users\Eranga\Documents\GitHub\tictactoe\TicTacToeGame\obj\Debug\TicTacToeGame.pdb
