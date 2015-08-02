@@ -37,3 +37,13 @@ D:\BACKUP\TicTacToeGame\TicTacToeGame\obj\Debug\TicTacToeGame.Forms.ScoreBoard.r
 C:\Users\Eranga\Documents\GitHub\tictactoe\TicTacToeGame\bin\Debug\TicTacToeGame.exe.config
 C:\Users\Eranga\Documents\GitHub\tictactoe\TicTacToeGame\obj\Debug\TicTacToeGame.exe
 C:\Users\Eranga\Documents\GitHub\tictactoe\TicTacToeGame\obj\Debug\TicTacToeGame.pdb
+C:\Users\Eranga\Documents\GitHub\tictactoe\TicTacToeGame\bin\Debug\TicTacToeGame.exe
+C:\Users\Eranga\Documents\GitHub\tictactoe\TicTacToeGame\bin\Debug\TicTacToeGame.pdb
+C:\Users\Eranga\Documents\GitHub\tictactoe\TicTacToeGame\obj\Debug\TicTacToeGame.csprojResolveAssemblyReference.cache
+C:\Users\Eranga\Documents\GitHub\tictactoe\TicTacToeGame\obj\Debug\TicTacToeGame.InputDialog.resources
+C:\Users\Eranga\Documents\GitHub\tictactoe\TicTacToeGame\obj\Debug\TicTacToeGame.PlayerForm.resources
+C:\Users\Eranga\Documents\GitHub\tictactoe\TicTacToeGame\obj\Debug\TicTacToeGame.Forms.ScoreBoard.resources
+C:\Users\Eranga\Documents\GitHub\tictactoe\TicTacToeGame\obj\Debug\TicTacToeGame.Properties.Resources.resources
+C:\Users\Eranga\Documents\GitHub\tictactoe\TicTacToeGame\obj\Debug\TicTacToeGame.Start.resources
+C:\Users\Eranga\Documents\GitHub\tictactoe\TicTacToeGame\obj\Debug\TicTacToeGame.TicTacToe.resources
+C:\Users\Eranga\Documents\GitHub\tictactoe\TicTacToeGame\obj\Debug\TicTacToeGame.csproj.GenerateResource.Cache

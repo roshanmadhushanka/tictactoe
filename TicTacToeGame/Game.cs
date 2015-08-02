@@ -20,7 +20,7 @@ namespace TicTacToeGame
         public GameMode game_mode { set; get; }
         public PlayerType[,] board{set; get;}
         public bool moveAllowed { set; get; }
-        public bool chanceOfPlayerAI { set; get; }
+        //public bool chanceOfPlayerAI { set; get; }
         //public bool chanceOfPlayerA { set; get; }
         public bool connected { set; get; }
         public Game()
@@ -40,14 +40,14 @@ namespace TicTacToeGame
             this.game_mode = gameMode;
             if (game_mode == GameMode.SINGLE_PLAYER)
             {
-                playerA.name = "User";
+                //playerA.name = "User";
                 playerB.name = "Computer";
                 playerA.moveAllowed = true;
                 playerB.moveAllowed = false;
             }else if(game_mode == GameMode.MULTI_PLAYER_STANDALONE){
-                playerA.name = "Ball";
+                //playerA.name = "Ball";
                 playerB.name = "Cross";
-                playerA.moveAllowed = true;
+                //playerA.moveAllowed = true;
                 playerB.moveAllowed = false;
                 this.difficulty = Difficulty.NONE;
             }
@@ -73,13 +73,13 @@ namespace TicTacToeGame
         
         public GameStat getGameStat()
         {
-            
+            /*
                 Provide game status
                 Player Ball wins
                 Player Cross wins
                 Player Tie
                 Not finished
-             
+             */
             //Check in rows
             int sum1 = (int)board[0, 0] + (int)board[0, 1] + (int)board[0, 2];
             int sum2 = (int)board[1, 0] + (int)board[1, 1] + (int)board[1, 2];
